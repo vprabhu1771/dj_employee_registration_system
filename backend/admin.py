@@ -12,6 +12,9 @@ class CustomUserAdmin(UserAdmin):
     form = CustomerUserChangeForm
     model = CustomUser
     list_display = ('first_name', 'last_name', 'email', 'gender' , 'image_tag', 'phone', 'hire_date', 'is_staff','is_active',)
+
+    list_display_links = ('first_name', 'last_name', 'email',)
+
     list_filter = ('first_name', 'last_name', 'email','is_staff','is_active', 'phone', 'hire_date',)
     fieldsets = (
         (None,{'fields': ('first_name', 'last_name', 'email','gender', 'phone', 'hire_date', 'password')}),
