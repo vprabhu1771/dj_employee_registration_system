@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 
     "corsheaders",
 
-    'api_v2'
+    'api_v1'
 ]
 
 # CORS_ALLOWED_ORIGINS = [
