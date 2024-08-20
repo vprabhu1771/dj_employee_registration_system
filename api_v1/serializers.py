@@ -13,6 +13,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
             'gender',
             'password',
             'phone',
+            'department',
+            'position',
             'hire_date'
         ]
 
