@@ -11,20 +11,22 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomerUserCreationForm
     form = CustomerUserChangeForm
     model = CustomUser
-    list_display = ('first_name', 'last_name', 'email', 'gender' , 'image_tag', 'phone', 'hire_date', 'is_staff','is_active',)
+
+    list_display = ('first_name', 'last_name', 'email', 'gender' , 'image_tag', 'phone','department', 'position', 'hire_date', 'is_staff','is_active',)
 
     list_display_links = ('first_name', 'last_name', 'email',)
 
-    list_filter = ('first_name', 'last_name', 'email','is_staff','is_active', 'phone', 'hire_date',)
+    list_filter = ('first_name', 'last_name', 'email','is_staff','is_active', 'phone', 'department', 'position', 'hire_date',)
+
     fieldsets = (
-        (None,{'fields': ('first_name', 'last_name', 'email','gender', 'phone', 'hire_date', 'password')}),
+        (None,{'fields': ('first_name', 'last_name', 'email','gender', 'phone', 'department', 'position',  'hire_date', 'password')}),
         ('Permissions',{'fields':('is_staff','is_active', 'groups', 'user_permissions')}),
     )
 
     add_fieldsets = (
         (None,{
             'classes':('wide',),
-            'fields':('first_name', 'last_name', 'email','gender', 'phone', 'hire_date', 'password1','password2','is_staff','is_active', 'groups', 'user_permissions')}
+            'fields':('first_name', 'last_name', 'email','gender', 'phone', 'department', 'position',  'hire_date', 'password1','password2','is_staff','is_active', 'groups', 'user_permissions')}
          ),
     )
     search_fields = ('email',)
