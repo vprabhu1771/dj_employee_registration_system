@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from backend.models import CustomUser
 
+from django.contrib.auth.models import Group
+
 class CustomUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
