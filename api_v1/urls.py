@@ -9,9 +9,9 @@ router.register(r'employees', CustomUserViewSet, basename='employees')
 
 urlpatterns = [
     # Login Type 1
-    path('api/token', obtain_auth_token, name='api_token_auth'),
+    path('api_v2/token', obtain_auth_token, name='api_token_auth'),
 
     # Login Type 2
-    path('api/login', CustomAuthToken.as_view(), name='custom_api_token_auth'),
+    path('api_v2/login', CustomAuthToken.as_view(), name='custom_api_token_auth'),
     path('api/', include(router.urls)),
 ]
