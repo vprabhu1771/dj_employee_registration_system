@@ -3,6 +3,9 @@ from backend.models import CustomUser
 
 from django.contrib.auth.models import Group
 
+from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import authenticate
+
 class CustomUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
