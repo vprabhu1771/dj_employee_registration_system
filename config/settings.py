@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.1.122',
+    '192.168.0.103',
     '127.0.0.1'
 ]
 
@@ -157,4 +158,23 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     )
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'login.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
 }
